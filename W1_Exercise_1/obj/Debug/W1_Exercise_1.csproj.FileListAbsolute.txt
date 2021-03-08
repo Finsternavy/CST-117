@@ -1,0 +1,10 @@
+C:\Users\Finst\Documents\GitHub\CST-117\W1_Exercise_1\bin\Debug\W1_Exercise_1.exe.config
+C:\Users\Finst\Documents\GitHub\CST-117\W1_Exercise_1\bin\Debug\W1_Exercise_1.exe
+C:\Users\Finst\Documents\GitHub\CST-117\W1_Exercise_1\bin\Debug\W1_Exercise_1.pdb
+C:\Users\Finst\Documents\GitHub\CST-117\W1_Exercise_1\obj\Debug\W1_Exercise_1.csprojAssemblyReference.cache
+C:\Users\Finst\Documents\GitHub\CST-117\W1_Exercise_1\obj\Debug\W1_Exercise_1.Form1.resources
+C:\Users\Finst\Documents\GitHub\CST-117\W1_Exercise_1\obj\Debug\W1_Exercise_1.Properties.Resources.resources
+C:\Users\Finst\Documents\GitHub\CST-117\W1_Exercise_1\obj\Debug\W1_Exercise_1.csproj.GenerateResource.cache
+C:\Users\Finst\Documents\GitHub\CST-117\W1_Exercise_1\obj\Debug\W1_Exercise_1.csproj.CoreCompileInputs.cache
+C:\Users\Finst\Documents\GitHub\CST-117\W1_Exercise_1\obj\Debug\W1_Exercise_1.exe
+C:\Users\Finst\Documents\GitHub\CST-117\W1_Exercise_1\obj\Debug\W1_Exercise_1.pdb
