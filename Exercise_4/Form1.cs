@@ -88,6 +88,7 @@ namespace Exercise_4
             
         }
 
+        //Close the app with custom exit button since borders were removed. 
         private void xButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -95,16 +96,18 @@ namespace Exercise_4
 
         private void complexConvertButton_Click(object sender, EventArgs e)
         {
+            //reset input text color when user corrects input error
             secondsTextBox.ForeColor = Color.Black;
+
             if (secondsTextBox.Text != "")
             {
                 int seconds;
-                int result;
 
                 if(int.TryParse(secondsTextBox.Text, out seconds))
                 {
                     seconds = int.Parse(secondsTextBox.Text);
 
+                    //create the DHMTimeConversion object in order to pass values from ConvertSeconds static class method back to each label. 
                     var myCoversion = ConvertSeconds.convertToDayHourMinutes(seconds);
 
                     daysLabel.Text = myCoversion.getDays().ToString("000");
@@ -113,6 +116,7 @@ namespace Exercise_4
                 }
                 else
                 {
+                    //visual representation of an input error to the user
                     secondsTextBox.ForeColor = Color.Red;
                     secondsTextBox.Text = "INVALID ENTRY!";
                 }
