@@ -1,0 +1,10 @@
+C:\Users\Finst\source\repos\Exercise_4\bin\Debug\Exercise_4.exe.config
+C:\Users\Finst\source\repos\Exercise_4\bin\Debug\Exercise_4.exe
+C:\Users\Finst\source\repos\Exercise_4\bin\Debug\Exercise_4.pdb
+C:\Users\Finst\source\repos\Exercise_4\obj\Debug\Exercise_4.csprojAssemblyReference.cache
+C:\Users\Finst\source\repos\Exercise_4\obj\Debug\Exercise_4.Form1.resources
+C:\Users\Finst\source\repos\Exercise_4\obj\Debug\Exercise_4.Properties.Resources.resources
+C:\Users\Finst\source\repos\Exercise_4\obj\Debug\Exercise_4.csproj.GenerateResource.cache
+C:\Users\Finst\source\repos\Exercise_4\obj\Debug\Exercise_4.csproj.CoreCompileInputs.cache
+C:\Users\Finst\source\repos\Exercise_4\obj\Debug\Exercise_4.exe
+C:\Users\Finst\source\repos\Exercise_4\obj\Debug\Exercise_4.pdb
