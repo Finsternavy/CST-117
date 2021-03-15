@@ -1,0 +1,10 @@
+C:\Users\Finst\Documents\GitHub\CST-117\Programming_Project_2\bin\Debug\Programming_Project_2.exe.config
+C:\Users\Finst\Documents\GitHub\CST-117\Programming_Project_2\bin\Debug\Programming_Project_2.exe
+C:\Users\Finst\Documents\GitHub\CST-117\Programming_Project_2\bin\Debug\Programming_Project_2.pdb
+C:\Users\Finst\Documents\GitHub\CST-117\Programming_Project_2\obj\Debug\Programming_Project_2.csprojAssemblyReference.cache
+C:\Users\Finst\Documents\GitHub\CST-117\Programming_Project_2\obj\Debug\Programming_Project_2.Form1.resources
+C:\Users\Finst\Documents\GitHub\CST-117\Programming_Project_2\obj\Debug\Programming_Project_2.Properties.Resources.resources
+C:\Users\Finst\Documents\GitHub\CST-117\Programming_Project_2\obj\Debug\Programming_Project_2.csproj.GenerateResource.cache
+C:\Users\Finst\Documents\GitHub\CST-117\Programming_Project_2\obj\Debug\Programming_Project_2.csproj.CoreCompileInputs.cache
+C:\Users\Finst\Documents\GitHub\CST-117\Programming_Project_2\obj\Debug\Programming_Project_2.exe
+C:\Users\Finst\Documents\GitHub\CST-117\Programming_Project_2\obj\Debug\Programming_Project_2.pdb
