@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections;
+
 
 namespace GPU_Inventory
 {
@@ -54,8 +49,8 @@ namespace GPU_Inventory
         // Initial data to work with at start
         public void initializeGPUList()
         {
-            // Create instance of a GPU and add it to the GPU list
-            gpus.Add(new GPU("ASUS", "RTX 2080ti", 999.99, 1500, 2500, 11, 10));
+            // Create instances of a GPU and add it to the GPU list
+            gpus.Add(new GPU("ASUS", "RTX 2080 ti", 999.99, 1500, 2500, 11, 10));
             gpus.Add(new GPU("MSI", "RTX 3080", 1599.99, 1800, 2700, 23, 1));
             gpus.Add(new GPU("Nvidia", "GTX 1080", 699.99, 1200, 1800, 6, 50));
         }
@@ -199,12 +194,10 @@ namespace GPU_Inventory
 
             gpus.RemoveAt(selectedIndex);
 
-            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
-            {
-                dataGridView1.Rows.RemoveAt(item.Index);
-            }
-
+            // Check to ensure appropriate instance is removed from the gpus List
             Console.WriteLine(printGPUList());
+
+            updateDataGridView();
         }
 
         // Print the GPU list to test delete, update, add functionality is working correctly.
@@ -219,5 +212,79 @@ namespace GPU_Inventory
 
             return sb.ToString();
         }
+
+        // Update a gpu that already exist in the inventory based on user input
+        private void updateSelected_Click(object sender, EventArgs e)
+        {
+            // Get index of selected row (Corresponds to gpus index also)
+            int selectedIndex = dataGridView1.CurrentCell.RowIndex;
+
+            // If user entered new information
+            if(manufactererTextBox.Text != "")
+            {
+                // updated corresponding gpu's property
+                gpus[selectedIndex].setManufacterer(manufactererTextBox.Text);
+            }
+
+            if(nameTextBox.Text != "")
+            {
+                gpus[selectedIndex].setName(nameTextBox.Text);
+            }
+
+            if(msrpTextBox.Text != "")
+            {
+                double msrp;
+
+                // make sure the user entered data is the type expected
+                if (double.TryParse(msrpTextBox.Text, out msrp))
+                {
+                    gpus[selectedIndex].setMSRP(msrp);
+                }
+            }
+
+            if(coresTextBox.Text != "")
+            {
+                int cores;
+
+                if(int.TryParse(coresTextBox.Text, out cores))
+                {
+                    gpus[selectedIndex].setCores(cores);
+                }
+            }
+
+            if(clockSpeedTextBox.Text != "")
+            {
+                int clockSpeed;
+
+                if(int.TryParse(clockSpeedTextBox.Text, out clockSpeed))
+                {
+                    gpus[selectedIndex].setClockSpeed(clockSpeed);
+                }
+            }
+
+            if(memorySizeTextBox.Text != "")
+            {
+                int memorySize;
+
+                if (int.TryParse(memorySizeTextBox.Text, out memorySize))
+                {
+                    gpus[selectedIndex].setMemorySize(memorySize);
+                }
+            }
+
+            if(inventoryTextBox.Text != "")
+            {
+                int quantity;
+
+                if(int.TryParse(inventoryTextBox.Text, out quantity))
+                {
+                    gpus[selectedIndex].setQuantity(quantity);
+                }
+            }
+
+            updateDataGridView();
+            clearForm();
+        }
     }
+
 }

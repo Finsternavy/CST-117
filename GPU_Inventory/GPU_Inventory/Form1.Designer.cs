@@ -29,8 +29,10 @@ namespace GPU_Inventory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleLabel = new System.Windows.Forms.Label();
             this.manufactererLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -64,152 +66,187 @@ namespace GPU_Inventory
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.titleLabel.Location = new System.Drawing.Point(248, 36);
+            this.titleLabel.Location = new System.Drawing.Point(344, 55);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(280, 46);
+            this.titleLabel.Size = new System.Drawing.Size(339, 55);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "GPU Inventory";
             // 
             // manufactererLabel
             // 
             this.manufactererLabel.AutoSize = true;
+            this.manufactererLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manufactererLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.manufactererLabel.Location = new System.Drawing.Point(41, 129);
+            this.manufactererLabel.Location = new System.Drawing.Point(35, 178);
+            this.manufactererLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.manufactererLabel.Name = "manufactererLabel";
-            this.manufactererLabel.Size = new System.Drawing.Size(92, 17);
+            this.manufactererLabel.Size = new System.Drawing.Size(86, 16);
             this.manufactererLabel.TabIndex = 0;
             this.manufactererLabel.Text = "Manufacterer";
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.nameLabel.Location = new System.Drawing.Point(147, 129);
+            this.nameLabel.Location = new System.Drawing.Point(37, 224);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(45, 17);
+            this.nameLabel.Size = new System.Drawing.Size(45, 16);
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "Name";
             // 
             // msrpLabel
             // 
             this.msrpLabel.AutoSize = true;
+            this.msrpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msrpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.msrpLabel.Location = new System.Drawing.Point(253, 129);
+            this.msrpLabel.Location = new System.Drawing.Point(35, 272);
+            this.msrpLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.msrpLabel.Name = "msrpLabel";
-            this.msrpLabel.Size = new System.Drawing.Size(47, 17);
+            this.msrpLabel.Size = new System.Drawing.Size(47, 16);
             this.msrpLabel.TabIndex = 0;
             this.msrpLabel.Text = "MSRP";
             // 
             // coresLabel
             // 
             this.coresLabel.AutoSize = true;
+            this.coresLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coresLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.coresLabel.Location = new System.Drawing.Point(359, 129);
+            this.coresLabel.Location = new System.Drawing.Point(35, 320);
+            this.coresLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.coresLabel.Name = "coresLabel";
-            this.coresLabel.Size = new System.Drawing.Size(45, 17);
+            this.coresLabel.Size = new System.Drawing.Size(44, 16);
             this.coresLabel.TabIndex = 0;
             this.coresLabel.Text = "Cores";
             // 
             // clockSpeedLabel
             // 
             this.clockSpeedLabel.AutoSize = true;
+            this.clockSpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clockSpeedLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.clockSpeedLabel.Location = new System.Drawing.Point(467, 129);
+            this.clockSpeedLabel.Location = new System.Drawing.Point(35, 367);
+            this.clockSpeedLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.clockSpeedLabel.Name = "clockSpeedLabel";
-            this.clockSpeedLabel.Size = new System.Drawing.Size(87, 17);
+            this.clockSpeedLabel.Size = new System.Drawing.Size(86, 16);
             this.clockSpeedLabel.TabIndex = 0;
             this.clockSpeedLabel.Text = "Clock Speed";
             // 
             // memorySizeLabel
             // 
             this.memorySizeLabel.AutoSize = true;
+            this.memorySizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memorySizeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.memorySizeLabel.Location = new System.Drawing.Point(573, 129);
+            this.memorySizeLabel.Location = new System.Drawing.Point(35, 415);
+            this.memorySizeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.memorySizeLabel.Name = "memorySizeLabel";
-            this.memorySizeLabel.Size = new System.Drawing.Size(89, 17);
+            this.memorySizeLabel.Size = new System.Drawing.Size(86, 16);
             this.memorySizeLabel.TabIndex = 0;
             this.memorySizeLabel.Text = "Memory Size";
             // 
             // inventoryLabel
             // 
             this.inventoryLabel.AutoSize = true;
+            this.inventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventoryLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.inventoryLabel.Location = new System.Drawing.Point(679, 129);
+            this.inventoryLabel.Location = new System.Drawing.Point(35, 463);
+            this.inventoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.inventoryLabel.Name = "inventoryLabel";
-            this.inventoryLabel.Size = new System.Drawing.Size(70, 17);
+            this.inventoryLabel.Size = new System.Drawing.Size(65, 16);
             this.inventoryLabel.TabIndex = 0;
             this.inventoryLabel.Text = "# In Stock";
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(9, 148);
+            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addButton.Location = new System.Drawing.Point(38, 516);
+            this.addButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(29, 23);
+            this.addButton.Size = new System.Drawing.Size(136, 25);
             this.addButton.TabIndex = 8;
-            this.addButton.Text = "+";
-            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Text = "Add New GPU";
+            this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // manufactererTextBox
             // 
-            this.manufactererTextBox.Location = new System.Drawing.Point(44, 149);
+            this.manufactererTextBox.Location = new System.Drawing.Point(38, 196);
+            this.manufactererTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.manufactererTextBox.Name = "manufactererTextBox";
-            this.manufactererTextBox.Size = new System.Drawing.Size(100, 22);
+            this.manufactererTextBox.Size = new System.Drawing.Size(136, 20);
             this.manufactererTextBox.TabIndex = 1;
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(150, 149);
+            this.nameTextBox.Location = new System.Drawing.Point(38, 242);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.nameTextBox.Size = new System.Drawing.Size(136, 20);
             this.nameTextBox.TabIndex = 2;
             // 
             // msrpTextBox
             // 
-            this.msrpTextBox.Location = new System.Drawing.Point(256, 149);
+            this.msrpTextBox.Location = new System.Drawing.Point(38, 290);
+            this.msrpTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.msrpTextBox.Name = "msrpTextBox";
-            this.msrpTextBox.Size = new System.Drawing.Size(100, 22);
+            this.msrpTextBox.Size = new System.Drawing.Size(136, 20);
             this.msrpTextBox.TabIndex = 3;
             // 
             // coresTextBox
             // 
-            this.coresTextBox.Location = new System.Drawing.Point(362, 149);
+            this.coresTextBox.Location = new System.Drawing.Point(38, 338);
+            this.coresTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.coresTextBox.Name = "coresTextBox";
-            this.coresTextBox.Size = new System.Drawing.Size(100, 22);
+            this.coresTextBox.Size = new System.Drawing.Size(136, 20);
             this.coresTextBox.TabIndex = 4;
             // 
             // clockSpeedTextBox
             // 
-            this.clockSpeedTextBox.Location = new System.Drawing.Point(470, 149);
+            this.clockSpeedTextBox.Location = new System.Drawing.Point(38, 385);
+            this.clockSpeedTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.clockSpeedTextBox.Name = "clockSpeedTextBox";
-            this.clockSpeedTextBox.Size = new System.Drawing.Size(100, 22);
+            this.clockSpeedTextBox.Size = new System.Drawing.Size(136, 20);
             this.clockSpeedTextBox.TabIndex = 5;
             // 
             // memorySizeTextBox
             // 
-            this.memorySizeTextBox.Location = new System.Drawing.Point(576, 149);
+            this.memorySizeTextBox.Location = new System.Drawing.Point(38, 433);
+            this.memorySizeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.memorySizeTextBox.Name = "memorySizeTextBox";
-            this.memorySizeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.memorySizeTextBox.Size = new System.Drawing.Size(136, 20);
             this.memorySizeTextBox.TabIndex = 6;
             // 
             // inventoryTextBox
             // 
-            this.inventoryTextBox.Location = new System.Drawing.Point(682, 149);
+            this.inventoryTextBox.Location = new System.Drawing.Point(38, 481);
+            this.inventoryTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.inventoryTextBox.Name = "inventoryTextBox";
-            this.inventoryTextBox.Size = new System.Drawing.Size(100, 22);
+            this.inventoryTextBox.Size = new System.Drawing.Size(136, 20);
             this.inventoryTextBox.TabIndex = 7;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.manufacterer,
@@ -219,20 +256,30 @@ namespace GPU_Inventory
             this.clockSpeed,
             this.memorySize,
             this.quantity});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 212);
+            this.dataGridView1.Location = new System.Drawing.Point(213, 169);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(750, 214);
+            this.dataGridView1.Size = new System.Drawing.Size(767, 454);
             this.dataGridView1.TabIndex = 11;
             // 
             // exitButton
@@ -240,10 +287,12 @@ namespace GPU_Inventory
             this.exitButton.BackColor = System.Drawing.Color.Transparent;
             this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.exitButton.Location = new System.Drawing.Point(763, 3);
+            this.exitButton.Location = new System.Drawing.Point(987, 11);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(29, 23);
+            this.exitButton.Size = new System.Drawing.Size(34, 31);
             this.exitButton.TabIndex = 12;
             this.exitButton.Text = "X";
             this.exitButton.UseVisualStyleBackColor = false;
@@ -251,86 +300,95 @@ namespace GPU_Inventory
             // 
             // deleteSelected
             // 
-            this.deleteSelected.Location = new System.Drawing.Point(21, 183);
+            this.deleteSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.deleteSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteSelected.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.deleteSelected.Location = new System.Drawing.Point(38, 578);
+            this.deleteSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.deleteSelected.Name = "deleteSelected";
-            this.deleteSelected.Size = new System.Drawing.Size(123, 23);
+            this.deleteSelected.Size = new System.Drawing.Size(136, 29);
             this.deleteSelected.TabIndex = 9;
-            this.deleteSelected.Text = "Delete Selected";
-            this.deleteSelected.UseVisualStyleBackColor = true;
+            this.deleteSelected.Text = "Delete Selected Row";
+            this.deleteSelected.UseVisualStyleBackColor = false;
             this.deleteSelected.Click += new System.EventHandler(this.deleteSelected_Click);
             // 
             // updateSelected
             // 
-            this.updateSelected.Location = new System.Drawing.Point(150, 183);
+            this.updateSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.updateSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateSelected.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.updateSelected.Location = new System.Drawing.Point(38, 545);
+            this.updateSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.updateSelected.Name = "updateSelected";
-            this.updateSelected.Size = new System.Drawing.Size(75, 23);
+            this.updateSelected.Size = new System.Drawing.Size(136, 29);
             this.updateSelected.TabIndex = 10;
-            this.updateSelected.Text = "Update Selected";
-            this.updateSelected.UseVisualStyleBackColor = true;
+            this.updateSelected.Text = "Update Selected Row";
+            this.updateSelected.UseVisualStyleBackColor = false;
+            this.updateSelected.Click += new System.EventHandler(this.updateSelected_Click);
             // 
             // manufacterer
             // 
-            this.manufacterer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.manufacterer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.manufacterer.HeaderText = "Manufacterer";
             this.manufacterer.MinimumWidth = 6;
             this.manufacterer.Name = "manufacterer";
-            this.manufacterer.Width = 121;
+            this.manufacterer.ReadOnly = true;
             // 
             // name
             // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.name.HeaderText = "Name";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
-            this.name.Width = 74;
+            this.name.ReadOnly = true;
             // 
             // msrp
             // 
-            this.msrp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.msrp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.msrp.HeaderText = "MSRP";
             this.msrp.MinimumWidth = 6;
             this.msrp.Name = "msrp";
-            this.msrp.Width = 76;
+            this.msrp.ReadOnly = true;
             // 
             // cores
             // 
-            this.cores.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cores.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cores.HeaderText = "Cores";
             this.cores.MinimumWidth = 6;
             this.cores.Name = "cores";
-            this.cores.Width = 74;
+            this.cores.ReadOnly = true;
             // 
             // clockSpeed
             // 
-            this.clockSpeed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.clockSpeed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clockSpeed.HeaderText = "Clock Speed";
             this.clockSpeed.MinimumWidth = 6;
             this.clockSpeed.Name = "clockSpeed";
-            this.clockSpeed.Width = 116;
+            this.clockSpeed.ReadOnly = true;
             // 
             // memorySize
             // 
-            this.memorySize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.memorySize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.memorySize.HeaderText = "Memory Size";
             this.memorySize.MinimumWidth = 6;
             this.memorySize.Name = "memorySize";
-            this.memorySize.Width = 118;
+            this.memorySize.ReadOnly = true;
             // 
             // quantity
             // 
-            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.quantity.HeaderText = "# In Stock";
             this.quantity.MinimumWidth = 6;
             this.quantity.Name = "quantity";
-            this.quantity.Width = 99;
+            this.quantity.ReadOnly = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(794, 450);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1032, 693);
             this.Controls.Add(this.updateSelected);
             this.Controls.Add(this.deleteSelected);
             this.Controls.Add(this.dataGridView1);
@@ -352,6 +410,7 @@ namespace GPU_Inventory
             this.Controls.Add(this.manufactererLabel);
             this.Controls.Add(this.titleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";

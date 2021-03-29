@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace GPU_Inventory 
 {
@@ -13,15 +9,15 @@ namespace GPU_Inventory
 
         }
 
-        public GPU(string manufacterer, string name, double msrp, int quantity, int cores, double clockSpeed, int memorySize)
+        public GPU(string manufacterer, string name, double msrp, int cores, double clockSpeed, int memorySize, int quantity)
         {
             this.setManufacterer(manufacterer);
             this.setName(name);
             this.setMSRP(msrp);
-            this.setQuantity(quantity);
             this.cores = cores;
             this.clockSpeed = clockSpeed;
             this.memorySize = memorySize;
+            this.setQuantity(quantity);
         }
 
         private int cores = 0;
