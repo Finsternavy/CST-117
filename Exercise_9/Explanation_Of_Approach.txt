@@ -1,0 +1,43 @@
+Christopher Finster
+CST-117, Exercise 9
+4 Apr 2021
+
+I used visual studios intellisense to correct formatting errors such as the duplicate "using" lines and the titles that
+were not commented out.  These can be easily located by checking the breakpoints in the log after running the program with
+no changes. 
+
+I used logical deduction to correct the errors in Lydia's actual code.
+
+First I ran the program to see what I was dealing with.  After seeing that the program ran and provided an output, I 
+started comparing the output to the indended output. 
+
+The first thing I noticed was that each set had dublicate values so I started reviewing the code line by line for a 
+method call that might be causing this issue. 
+
+The constructor for a Set simply instantiates the List. No issue here.
+
+The first method call is addElement(). No issue with the addElement() method. The addElement() does call another method though, 
+the containsElement().   
+
+The containsElement() is where I found the fist error. In the first iteration of the for loop, if the element does not match, 
+the method returns false. This only allows for checking index 0 of the list.  This method will only work if the index 0 of the
+list matches. Remove the else statement and its code to resolve this issue.
+
+Next, I ran the program again to see the changes.  The results showed no duplicated in either set, however, the original set 
+(a in this case) now included non-duplicate values of set b. 
+
+So, I looked down further in the code for the union().
+
+Here I found this method simply adds each element in set b to the original set (a in this case). This changes the elements 
+in the original set and is not what was intended as set a and b should remain unchanged. 
+
+To correct this, I add a new set and set it equal to the original using the ToList() because I do not want to copy the 
+reference, I want to duplicate the contents. 
+
+Then when iterating through the passed in set, each element can be added to the new temporary set. This gives you a true
+union of the original set and the passed in set. 
+
+The last issue was the incorrect set was being return by the union().  I simply changed the return set to the new temporary set.
+
+Then, I ran the program again and it was working properly. 
+ 

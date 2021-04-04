@@ -1,0 +1,13 @@
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\bin\Debug\netcoreapp3.1\Exercise_9.exe
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\bin\Debug\netcoreapp3.1\Exercise_9.deps.json
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\bin\Debug\netcoreapp3.1\Exercise_9.runtimeconfig.json
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\bin\Debug\netcoreapp3.1\Exercise_9.runtimeconfig.dev.json
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\bin\Debug\netcoreapp3.1\Exercise_9.dll
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\bin\Debug\netcoreapp3.1\Exercise_9.pdb
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\obj\Debug\netcoreapp3.1\Exercise_9.csprojAssemblyReference.cache
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\obj\Debug\netcoreapp3.1\Exercise_9.AssemblyInfoInputs.cache
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\obj\Debug\netcoreapp3.1\Exercise_9.AssemblyInfo.cs
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\obj\Debug\netcoreapp3.1\Exercise_9.csproj.CoreCompileInputs.cache
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\obj\Debug\netcoreapp3.1\Exercise_9.dll
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\obj\Debug\netcoreapp3.1\Exercise_9.pdb
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_9\obj\Debug\netcoreapp3.1\Exercise_9.genruntimeconfig.cache
