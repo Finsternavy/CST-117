@@ -1,0 +1,10 @@
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_8\bin\Debug\Exercise_8.exe.config
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_8\bin\Debug\Exercise_8.exe
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_8\bin\Debug\Exercise_8.pdb
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_8\obj\Debug\Exercise_8.csprojAssemblyReference.cache
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_8\obj\Debug\Exercise_8.Form1.resources
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_8\obj\Debug\Exercise_8.Properties.Resources.resources
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_8\obj\Debug\Exercise_8.csproj.GenerateResource.cache
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_8\obj\Debug\Exercise_8.csproj.CoreCompileInputs.cache
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_8\obj\Debug\Exercise_8.exe
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_8\Exercise_8\obj\Debug\Exercise_8.pdb
