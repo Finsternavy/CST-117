@@ -1,0 +1,3 @@
+I am trying to count how many words end in the letter t or e. (<-- 4)
+I am trying to count how many words end in the letter t or e. (<-- 4)
+Should be 9 now(<-- 9 total)

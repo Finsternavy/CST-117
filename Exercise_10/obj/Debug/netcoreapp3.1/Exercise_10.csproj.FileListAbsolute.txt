@@ -1,0 +1,13 @@
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\bin\Debug\netcoreapp3.1\Exercise_10.exe
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\bin\Debug\netcoreapp3.1\Exercise_10.deps.json
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\bin\Debug\netcoreapp3.1\Exercise_10.runtimeconfig.json
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\bin\Debug\netcoreapp3.1\Exercise_10.runtimeconfig.dev.json
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\bin\Debug\netcoreapp3.1\Exercise_10.dll
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\bin\Debug\netcoreapp3.1\Exercise_10.pdb
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\obj\Debug\netcoreapp3.1\Exercise_10.csprojAssemblyReference.cache
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\obj\Debug\netcoreapp3.1\Exercise_10.AssemblyInfoInputs.cache
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\obj\Debug\netcoreapp3.1\Exercise_10.AssemblyInfo.cs
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\obj\Debug\netcoreapp3.1\Exercise_10.csproj.CoreCompileInputs.cache
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\obj\Debug\netcoreapp3.1\Exercise_10.dll
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\obj\Debug\netcoreapp3.1\Exercise_10.pdb
+C:\Users\Finst\Documents\GitHub\CST-117\Exercise_10\obj\Debug\netcoreapp3.1\Exercise_10.genruntimeconfig.cache
