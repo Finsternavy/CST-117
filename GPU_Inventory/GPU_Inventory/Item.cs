@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Text;
 
+// Author: Christopher Finster
+// CST-117 Milestone 3.  Inventory Manager
+// Last updated: 10 Apr 2021
 
 namespace GPU_Inventory
 {
@@ -11,19 +14,18 @@ namespace GPU_Inventory
 
         }
 
-        public Item(string manufacterer, string name, double msrp, int quantity)
+        public Item(string manufacterer, string name, double price, int quantity)
         {
             this.manufacterer = manufacterer;
             this.name = name;
-            this.msrp = msrp;
+            this.price = price;
             this.quantity = quantity;
         }
 
         private string manufacterer = "";
         private string name = "";
-        private double msrp = 0.00;
+        private double price = 0.00;
         private int quantity = 0;
-        private bool selected = false;
 
         public string getManufacterer()
         {
@@ -45,14 +47,14 @@ namespace GPU_Inventory
             this.name = name;
         }
 
-        public double getMSRP()
+        public double getPrice()
         {
-            return this.msrp;
+            return this.price;
         }
 
-        public void setMSRP(double msrp)
+        public void setPrice(double price)
         {
-            this.msrp = msrp;
+            this.price = price;
         }
 
         public int getQuantity()
@@ -92,26 +94,6 @@ namespace GPU_Inventory
             this.quantity = getQuantity() + toBeAdded;
         }
 
-        public void toggleSelected()
-        {
-            if (!selected)
-            {
-                this.selected = true;
-                return;
-            }
-
-            this.selected = false;
-        }
-
-        public bool getSelected()
-        {
-            return this.selected;
-        }
-
-        public void setSelected(bool selected)
-        {
-            this.selected = selected;
-        }
         override
         public string ToString()
         {
@@ -119,7 +101,7 @@ namespace GPU_Inventory
 
             sb.Append(getManufacterer() + "  ");
             sb.Append(getName() + "  ");
-            sb.Append(getMSRP() + "  ");
+            sb.Append(getPrice() + "  ");
             sb.Append(getQuantity() + "\r\n");
 
             return sb.ToString();

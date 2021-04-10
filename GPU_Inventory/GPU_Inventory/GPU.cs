@@ -1,5 +1,9 @@
 ﻿using System.Text;
 
+// Author: Christopher Finster
+// CST-117 Milestone 3.  Inventory Manager
+// Last updated: 10 Apr 2021
+
 namespace GPU_Inventory 
 {
     public class GPU : Item
@@ -9,11 +13,11 @@ namespace GPU_Inventory
 
         }
 
-        public GPU(string manufacterer, string name, double msrp, int cores, double clockSpeed, int memorySize, int quantity)
+        public GPU(string manufacterer, string name, double price, int cores, double clockSpeed, int memorySize, int quantity)
         {
             this.setManufacterer(manufacterer);
             this.setName(name);
-            this.setMSRP(msrp);
+            this.setPrice(price);
             this.cores = cores;
             this.clockSpeed = clockSpeed;
             this.memorySize = memorySize;
@@ -61,7 +65,7 @@ namespace GPU_Inventory
 
             sb.Append(getManufacterer() + "  ");
             sb.Append(getName() + "  ");
-            sb.Append(getMSRP() + "  ");
+            sb.Append(getPrice() + "  ");
             sb.Append(getCores() + "  ");
             sb.Append(getClockSpeed() + "  ");
             sb.Append(getMemorySize() + "  ");
