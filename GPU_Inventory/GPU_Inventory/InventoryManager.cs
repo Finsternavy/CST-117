@@ -12,195 +12,40 @@ namespace GPU_Inventory
 {
     public class InventoryManager
     {
-        public InventoryManager(int maxItems)
+        public List<GPU> gpuInventory;
+        public List<string> gpuAsList;
+        public List<int> currentSearchIndexes = new List<int>();
+
+        private int maxStock = 50;
+
+        public InventoryManager(List<GPU> gpuArray, List<string> gpuAsList)
         {
-            gpuInventory = new GPU[maxItems];
+            gpuInventory = gpuArray;
+            this.gpuAsList = gpuAsList;
             initializeGPUInventory();
         }
 
-        public InventoryManager()
-        {
-            gpuInventory = new GPU[0];
-        }
-
-        public GPU[] gpuInventory;
-        public List<int> currentSearchIndexes = new List<int>();
-        int maxStock = 50;
-
-        int count = 0;
-        int newIndex = 0;
         private void initializeGPUInventory()
         {
-            gpuInventory.SetValue(new GPU("ASUS", "RTX 2080 ti", 999.99, 1500, 2500, 11, 10), 0);
-            gpuInventory.SetValue(new GPU("MSI", "RTX 3080", 1599.99, 1800, 2700, 23, 1), 1);
-            gpuInventory.SetValue(new GPU("Nvidia", "GTX 1080", 699.99, 1200, 1800, 6, 50), 2);
+            gpuInventory.Add(new GPU("ASUS", "RTX 2080 ti", 999.99, 1500, 2500, 11, 10));
+            gpuInventory.Add(new GPU("MSI", "RTX 3080", 1599.99, 1800, 2700, 23, 1));
+            gpuInventory.Add(new GPU("Nvidia", "GTX 1080", 699.99, 1200, 1800, 6, 50));
         }
 
         public void delete(int index)
         {
-            newIndex = 0;
-            count = this.gpuInventory.Length - 1;
-            GPU[] temp;
-
-            if (count >= 0)
-            {
-                temp = new GPU[count];
-            }
-            else
-            {
-                Console.WriteLine("GPU Inventory array is empty");
-                return;
-            }
-            
-            this.gpuInventory[index].setName("delete");
-
-            for(int i = 0; i < this.gpuInventory.Length; i++)
-            {
-                if (!this.gpuInventory[i].getName().Equals("delete"))
-                {
-                    temp.SetValue(this.gpuInventory[i], newIndex);
-                    newIndex++;
-                }
-            }
-
-            this.gpuInventory = temp;
+            this.gpuInventory.RemoveAt(index);
         }
 
         public void add(GPU gpu)
         {
-            count = this.gpuInventory.Length + 1;
-            GPU[] temp = new GPU[count];
-            Array.Copy(this.gpuInventory, temp, this.gpuInventory.Length);
-            temp.SetValue(gpu, temp.Length - 1);
-            this.gpuInventory = temp;
-            Console.WriteLine(this.ToString());
+            this.gpuInventory.Add(gpu);
         }
 
-        public void update(GPU gpu, int index)
+        public void update(GPU gpu)
         {
-            this.gpuInventory.SetValue(gpu, index);
-        }
-        
-        public string toString(GPU[] arrayToPrint)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            foreach (GPU gpu in arrayToPrint)
-            {
-                sb.Append(gpu.ToString());
-            }
-
-            return sb.ToString();
-        }
-
-        public void searchManufacterer(string manufacturer)
-        {
-            currentSearchIndexes.Clear();
-
-            for(int i = 0; i < this.gpuInventory.Length; i++)
-            {
-                if (this.gpuInventory[i].getManufacterer().ToLower().Equals(manufacturer.ToLower()))
-                {
-                    currentSearchIndexes.Add(i);
-                }
-            }
-        }
-
-        public void searchName(string name)
-        {
-            currentSearchIndexes.Clear();
-
-            for (int i = 0; i < this.gpuInventory.Length; i++)
-            {
-                if (this.gpuInventory[i].getName().ToLower().Equals(name.ToLower()))
-                {
-                    currentSearchIndexes.Add(i);
-                }
-            }
-        }
-
-        public void searchPrice(string price)
-        {
-            currentSearchIndexes.Clear();
-
-            for (int i = 0; i < this.gpuInventory.Length; i++)
-            {
-                if (this.gpuInventory[i].getPrice().ToString().Equals(price))
-                {
-                    currentSearchIndexes.Add(i);
-                }
-            }
-        }
-
-        public void searchCores(string cores)
-        {
-            currentSearchIndexes.Clear();
-
-            for (int i = 0; i < this.gpuInventory.Length; i++)
-            {
-                if (this.gpuInventory[i].getCores().ToString().Equals(cores))
-                {
-                    currentSearchIndexes.Add(i);
-                }
-            }
-        }
-
-        public void searchClockSpeed(string clockSpeed)
-        {
-            currentSearchIndexes.Clear();
-
-            for (int i = 0; i < this.gpuInventory.Length; i++)
-            {
-                if (this.gpuInventory[i].getClockSpeed().ToString().Equals(clockSpeed))
-                {
-                    currentSearchIndexes.Add(i);
-                }
-            }
-        }
-
-        public void searchMemorySize(string memorySize)
-        {
-            currentSearchIndexes.Clear();
-
-            for (int i = 0; i < this.gpuInventory.Length; i++)
-            {
-                if (this.gpuInventory[i].getMemorySize().ToString().Equals(memorySize))
-                {
-                    currentSearchIndexes.Add(i);
-                }
-            }
-        }
-
-        public void searchQuantity(string quantity)
-        {
-            currentSearchIndexes.Clear();
-
-            for (int i = 0; i < this.gpuInventory.Length; i++)
-            {
-                if (this.gpuInventory[i].getQuantity().ToString().Equals(quantity))
-                {
-                    currentSearchIndexes.Add(i);
-                }
-            }
-        }
-
-        public void search(string search)
-        {
-            currentSearchIndexes.Clear();
-
-            for(int i = 0; i < this.gpuInventory.Length; i++)
-            {
-                if (this.gpuInventory[i].getManufacterer().ToLower().Equals(search.ToLower()) ||
-                    this.gpuInventory[i].getName().ToLower().Equals(search.ToLower()) ||
-                    this.gpuInventory[i].getPrice().ToString().Equals(search) ||
-                    this.gpuInventory[i].getCores().ToString().Equals(search) ||
-                    this.gpuInventory[i].getClockSpeed().ToString().Equals(search) ||
-                    this.gpuInventory[i].getMemorySize().ToString().Equals(search) ||
-                    this.gpuInventory[i].getQuantity().ToString().Equals(search))
-                {
-                    currentSearchIndexes.Add(i);
-                }
-            }
+            this.gpuInventory.Remove(gpu);
+            this.gpuInventory.Add(gpu);
         }
 
         public void restockItem(int index)
@@ -210,7 +55,7 @@ namespace GPU_Inventory
 
         public void restockAllItems()
         {
-            foreach(GPU gpu in this.gpuInventory)
+            foreach (GPU gpu in this.gpuInventory)
             {
                 gpu.setQuantity(maxStock);
             }
@@ -218,8 +63,212 @@ namespace GPU_Inventory
 
         public List<int> displayInventory()
         {
-
             return currentSearchIndexes;
+        }
+
+        public void search(string search, string filter)
+        {
+            currentSearchIndexes.Clear();
+
+            // switch the filter.  Search by filter selected by user or default to "All"
+            switch (filter)
+            {
+                // for comments on each statement, see case "All".  They all do the same thing just change the search method used
+                case "All":
+
+                    searchAll(search);
+                    break;
+
+                case "Manufacterer":
+
+                    searchManufacterer(search);
+                    break;
+
+                case "Name":
+
+                    searchName(search);
+                    break;
+
+                case "Price":
+
+                    searchPrice(search);
+                    break;
+
+                case "Cores":
+
+                    searchCores(search);
+                    break;
+
+                case "Clock Speed":
+
+                    searchClockSpeed(search);
+                    break;
+
+                case "Memory Size":
+
+                    searchMemorySize(search);
+                    break;
+
+                case "# In Stock":
+
+                    searchQuantity(search);
+                    break;
+
+                default:
+
+                    // create list of items that contain what the user searched for
+                    searchAll(search);
+                    break;
+            }
+        }
+
+        private void searchManufacterer(string manufacturer)
+        {
+            currentSearchIndexes.Clear();
+
+            for(int i = 0; i < this.gpuInventory.Count; i++)
+            {
+                manufacterEquals(i, manufacturer);
+            }
+        }
+
+        private void manufacterEquals(int index, string manufacterer)
+        {
+            if (manufacterer.ToLower().Equals(this.gpuInventory[index].getManufacterer().ToLower()))
+                currentSearchIndexes.Add(index);
+        }
+
+        private void searchName(string name)
+        {
+            currentSearchIndexes.Clear();
+
+            for (int i = 0; i < this.gpuInventory.Count; i++)
+            {
+                nameEquals(i, name);
+            }
+        }
+
+        private void nameEquals(int index, string name)
+        {
+            if (name.Equals(this.gpuInventory[index].getName().ToLower()))
+            
+                currentSearchIndexes.Add(index);
+        }
+
+        private void searchPrice(string price)
+        {
+            currentSearchIndexes.Clear();
+
+            for (int i = 0; i < this.gpuInventory.Count; i++)
+            {
+                priceEquals(i, price);
+            }
+        }
+
+        private void priceEquals(int index, string price)
+        {
+            
+            if (price.ToString().Equals(this.gpuInventory[index].getPrice().ToString()))
+            {
+                currentSearchIndexes.Add(index);
+            }
+        }
+
+        private void searchCores(string cores)
+        {
+            currentSearchIndexes.Clear();
+
+            for (int i = 0; i < this.gpuInventory.Count; i++)
+            {
+                coresEquals(i, cores);
+            }
+        }
+
+        private void coresEquals(int index, string cores)
+        {
+            
+            if (cores.ToString().Equals(this.gpuInventory[index].getCores().ToString()))
+            {
+                currentSearchIndexes.Add(index);
+            }
+        }
+
+        private void searchClockSpeed(string clockSpeed)
+        {
+            currentSearchIndexes.Clear();
+
+            for (int i = 0; i < this.gpuInventory.Count; i++)
+            {
+                clockSpeedEquals(i, clockSpeed);
+            }
+        }
+
+        private void clockSpeedEquals(int index, string clockSpeed)
+        {
+            
+            if (clockSpeed.ToString().Equals(this.gpuInventory[index].getClockSpeed().ToString()))
+            {
+                currentSearchIndexes.Add(index);
+            }
+        }
+
+        private void searchMemorySize(string memorySize)
+        {
+            currentSearchIndexes.Clear();
+
+            for (int i = 0; i < this.gpuInventory.Count; i++)
+            {
+                memorySizeEquals(i, memorySize);
+            }
+        }
+
+        private void memorySizeEquals(int index, string memorySize)
+        {
+            if (memorySize.ToString().Equals(this.gpuInventory[index].getMemorySize().ToString()))
+            {
+                currentSearchIndexes.Add(index);
+            }
+        }
+
+        private void searchQuantity(string quantity)
+        {
+            currentSearchIndexes.Clear();
+
+            for (int i = 0; i < this.gpuInventory.Count; i++)
+            {
+                quantityEquals(i, quantity);
+            }
+        }
+
+        private void quantityEquals(int index, string quantity)
+        {
+            if (quantity.ToString().Equals(this.gpuInventory[index].getQuantity().ToString()))
+            {
+                currentSearchIndexes.Add(index);
+            }
+        }
+
+        private void searchAll(string search)
+        {
+            // create list of items that contain what the user searched for
+            for (int i = 0; i < this.gpuInventory.Count; i++)
+            {
+                checkThisInstance(i, search);
+            }
+        }
+
+        private void checkThisInstance(int index, string search)
+        {
+            if (search.ToLower().Equals(this.gpuInventory[index].getManufacterer().ToLower()) ||
+                search.ToLower().Equals(this.gpuInventory[index].getName().ToLower()) ||
+                search.ToLower().Equals(this.gpuInventory[index].getPrice().ToString()) ||
+                search.ToLower().Equals(this.gpuInventory[index].getCores().ToString()) ||
+                search.ToLower().Equals(this.gpuInventory[index].getClockSpeed().ToString()) ||
+                search.ToLower().Equals(this.gpuInventory[index].getMemorySize().ToString()) ||
+                search.ToLower().Equals(this.gpuInventory[index].getQuantity().ToString()))
+            {
+                currentSearchIndexes.Add(index);
+            }
         }
     }
 }

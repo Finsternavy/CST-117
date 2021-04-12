@@ -1,0 +1,15 @@
+# This is a comment
+# Ignore this folder
+folder/
+# Ignore this file
+.setting
+# Ignore ide stuff
+vs/
+# ignore bin
+bin/
+# ignore build stuff
+out/
+output/
+build/
+report/
+reports/

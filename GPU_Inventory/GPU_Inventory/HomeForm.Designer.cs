@@ -1,7 +1,7 @@
 ﻿
 namespace GPU_Inventory
 {
-    partial class Form1
+    partial class HomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@ namespace GPU_Inventory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleLabel = new System.Windows.Forms.Label();
             this.manufactererLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@ namespace GPU_Inventory
             this.clockSpeedTextBox = new System.Windows.Forms.TextBox();
             this.memorySizeTextBox = new System.Windows.Forms.TextBox();
             this.inventoryTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.inventoryView = new System.Windows.Forms.DataGridView();
             this.manufacterer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,12 +61,14 @@ namespace GPU_Inventory
             this.deleteSelected = new System.Windows.Forms.Button();
             this.updateSelected = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
-            this.loadAllButton = new System.Windows.Forms.Button();
+            this.clearInputButton = new System.Windows.Forms.Button();
             this.restockAllButton = new System.Windows.Forms.Button();
             this.restockItemButton = new System.Windows.Forms.Button();
-            this.searchTextBox1 = new System.Windows.Forms.TextBox();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchFilterComboBox = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.loadAllButton = new System.Windows.Forms.Button();
+            this.filterByLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryView)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -226,27 +228,27 @@ namespace GPU_Inventory
             this.inventoryTextBox.Size = new System.Drawing.Size(180, 22);
             this.inventoryTextBox.TabIndex = 7;
             // 
-            // dataGridView1
+            // inventoryView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.inventoryView.AllowUserToAddRows = false;
+            this.inventoryView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.inventoryView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.inventoryView.BackgroundColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.inventoryView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.inventoryView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inventoryView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.manufacterer,
             this.name,
             this.price,
@@ -254,31 +256,32 @@ namespace GPU_Inventory
             this.clockSpeed,
             this.memorySize,
             this.quantity});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(284, 208);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1023, 559);
-            this.dataGridView1.TabIndex = 11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.inventoryView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.inventoryView.GridColor = System.Drawing.Color.Black;
+            this.inventoryView.Location = new System.Drawing.Point(284, 208);
+            this.inventoryView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.inventoryView.Name = "inventoryView";
+            this.inventoryView.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.inventoryView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.inventoryView.RowHeadersWidth = 51;
+            this.inventoryView.RowTemplate.Height = 24;
+            this.inventoryView.Size = new System.Drawing.Size(1023, 559);
+            this.inventoryView.TabIndex = 11;
+            this.inventoryView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventoryView_CellClick);
             // 
             // manufacterer
             // 
@@ -394,19 +397,19 @@ namespace GPU_Inventory
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.search_Click);
             // 
-            // loadAllButton
+            // clearInputButton
             // 
-            this.loadAllButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.loadAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadAllButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.loadAllButton.Location = new System.Drawing.Point(51, 168);
-            this.loadAllButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.loadAllButton.Name = "loadAllButton";
-            this.loadAllButton.Size = new System.Drawing.Size(181, 36);
-            this.loadAllButton.TabIndex = 11;
-            this.loadAllButton.Text = "Load All";
-            this.loadAllButton.UseVisualStyleBackColor = false;
-            this.loadAllButton.Click += new System.EventHandler(this.loadAll_Click);
+            this.clearInputButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.clearInputButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearInputButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.clearInputButton.Location = new System.Drawing.Point(53, 168);
+            this.clearInputButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clearInputButton.Name = "clearInputButton";
+            this.clearInputButton.Size = new System.Drawing.Size(181, 36);
+            this.clearInputButton.TabIndex = 11;
+            this.clearInputButton.Text = "Clear Input";
+            this.clearInputButton.UseVisualStyleBackColor = false;
+            this.clearInputButton.Click += new System.EventHandler(this.clearForm_Click);
             // 
             // restockAllButton
             // 
@@ -436,16 +439,16 @@ namespace GPU_Inventory
             this.restockItemButton.UseVisualStyleBackColor = false;
             this.restockItemButton.Click += new System.EventHandler(this.restockSelected_Click);
             // 
-            // searchTextBox1
+            // searchTextBox
             // 
-            this.searchTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox1.Location = new System.Drawing.Point(284, 168);
-            this.searchTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchTextBox1.Multiline = true;
-            this.searchTextBox1.Name = "searchTextBox1";
-            this.searchTextBox1.Size = new System.Drawing.Size(210, 36);
-            this.searchTextBox1.TabIndex = 8;
-            this.searchTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Location = new System.Drawing.Point(284, 168);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchTextBox.Multiline = true;
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(210, 36);
+            this.searchTextBox.TabIndex = 8;
+            this.searchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // searchFilterComboBox
             // 
@@ -459,13 +462,38 @@ namespace GPU_Inventory
             "Clock Speed",
             "Memory Size",
             "# In Stock"});
-            this.searchFilterComboBox.Location = new System.Drawing.Point(560, 140);
+            this.searchFilterComboBox.Location = new System.Drawing.Point(373, 139);
             this.searchFilterComboBox.Name = "searchFilterComboBox";
             this.searchFilterComboBox.Size = new System.Drawing.Size(121, 24);
             this.searchFilterComboBox.TabIndex = 9;
             this.searchFilterComboBox.Text = "Search Filter";
             // 
-            // Form1
+            // loadAllButton
+            // 
+            this.loadAllButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.loadAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadAllButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.loadAllButton.Location = new System.Drawing.Point(687, 168);
+            this.loadAllButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.loadAllButton.Name = "loadAllButton";
+            this.loadAllButton.Size = new System.Drawing.Size(181, 36);
+            this.loadAllButton.TabIndex = 12;
+            this.loadAllButton.Text = "Load All";
+            this.loadAllButton.UseVisualStyleBackColor = false;
+            this.loadAllButton.Click += new System.EventHandler(this.loadAll_Click);
+            // 
+            // filterByLabel
+            // 
+            this.filterByLabel.AutoSize = true;
+            this.filterByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterByLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.filterByLabel.Location = new System.Drawing.Point(280, 144);
+            this.filterByLabel.Name = "filterByLabel";
+            this.filterByLabel.Size = new System.Drawing.Size(77, 20);
+            this.filterByLabel.TabIndex = 0;
+            this.filterByLabel.Text = "Filter By:";
+            // 
+            // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -476,17 +504,18 @@ namespace GPU_Inventory
             this.Controls.Add(this.updateSelected);
             this.Controls.Add(this.restockItemButton);
             this.Controls.Add(this.restockAllButton);
+            this.Controls.Add(this.clearInputButton);
             this.Controls.Add(this.loadAllButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.deleteSelected);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.inventoryView);
             this.Controls.Add(this.inventoryTextBox);
             this.Controls.Add(this.memorySizeTextBox);
             this.Controls.Add(this.clockSpeedTextBox);
             this.Controls.Add(this.coresTextBox);
             this.Controls.Add(this.priceTextBox);
             this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(this.searchTextBox1);
+            this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.manufactererTextBox);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.addButton);
@@ -496,14 +525,15 @@ namespace GPU_Inventory
             this.Controls.Add(this.coresLabel);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.filterByLabel);
             this.Controls.Add(this.manufactererLabel);
             this.Controls.Add(this.titleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,12 +557,12 @@ namespace GPU_Inventory
         private System.Windows.Forms.TextBox clockSpeedTextBox;
         private System.Windows.Forms.TextBox memorySizeTextBox;
         private System.Windows.Forms.TextBox inventoryTextBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView inventoryView;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button deleteSelected;
         private System.Windows.Forms.Button updateSelected;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.Button loadAllButton;
+        private System.Windows.Forms.Button clearInputButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn manufacterer;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
@@ -542,8 +572,10 @@ namespace GPU_Inventory
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.Button restockAllButton;
         private System.Windows.Forms.Button restockItemButton;
-        private System.Windows.Forms.TextBox searchTextBox1;
+        private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.ComboBox searchFilterComboBox;
+        private System.Windows.Forms.Button loadAllButton;
+        private System.Windows.Forms.Label filterByLabel;
     }
 }
 

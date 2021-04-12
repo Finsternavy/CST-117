@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Text;
 
 // Author: Christopher Finster
 // CST-117 Milestone 3.  Inventory Manager
@@ -10,10 +11,17 @@ namespace GPU_Inventory
     {
         public GPU()
         {
-
+            this.setManufacterer("Default");
+            this.setName("Default");
+            this.setPrice(0.00);
+            this.setCores(0);
+            this.setClockSpeed(0);
+            this.setMemorySize(0);
+            this.setQuantity(0);
+            gpuAsList = new List<string>();
         }
 
-        public GPU(string manufacterer, string name, double price, int cores, double clockSpeed, int memorySize, int quantity)
+        public GPU(string manufacterer, string name, double price, int cores, int clockSpeed, int memorySize, int quantity )
         {
             this.setManufacterer(manufacterer);
             this.setName(name);
@@ -22,10 +30,13 @@ namespace GPU_Inventory
             this.clockSpeed = clockSpeed;
             this.memorySize = memorySize;
             this.setQuantity(quantity);
+            gpuAsList = new List<string>();
+
         }
 
+        List<string> gpuAsList ;
         private int cores = 0;
-        private double clockSpeed = 0.00;
+        private int clockSpeed = 0;
         private int memorySize = 0;
 
         public int getCores()
@@ -43,7 +54,7 @@ namespace GPU_Inventory
             return this.clockSpeed;
         }
 
-        public void setClockSpeed(double clockSpeed)
+        public void setClockSpeed(int clockSpeed)
         {
             this.clockSpeed = clockSpeed;
         }
@@ -56,6 +67,18 @@ namespace GPU_Inventory
         public void setMemorySize(int memorySize)
         {
             this.memorySize = memorySize;
+        }
+
+        public List<string> gpuToList()
+        {
+            gpuAsList.Add(this.getManufacterer());
+            gpuAsList.Add(this.getName());
+            gpuAsList.Add(this.getPrice().ToString());
+            gpuAsList.Add(this.getCores().ToString());
+            gpuAsList.Add(this.getClockSpeed().ToString());
+            gpuAsList.Add(this.getMemorySize().ToString());
+            gpuAsList.Add(this.getQuantity().ToString());
+            return gpuAsList;
         }
 
         override
