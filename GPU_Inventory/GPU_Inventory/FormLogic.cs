@@ -14,7 +14,8 @@ namespace GPU_Inventory
     {
         public InventoryManager manager;
         public List<string> gpuAsList;
-
+        public string[] row = new string[7];
+        public List<int> searchResults = new List<int>();
         public string currentSearchFilter = "All";
         public string currentSearch = "";
         private string manufactererTest;
@@ -27,8 +28,7 @@ namespace GPU_Inventory
         private int count = 0;
         private int selectedIndex = 0;
         private bool isSearching = false;
-        public string[] row = new string[7];
-        public List<int> searchResults = new List<int>();
+        
 
         public FormLogic(InventoryManager manager, List<string> gpuAsList)
         {

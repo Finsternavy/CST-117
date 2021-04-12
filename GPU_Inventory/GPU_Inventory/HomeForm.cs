@@ -14,11 +14,12 @@ namespace GPU_Inventory
         private int count = 0;
         private int selectedIndex = 0;
         private FormLogic formLogic;
+        private string[] textBoxesText = new string[7];
+        private TextBox[] textBoxes = new TextBox[7];
 
         public HomeForm(FormLogic formLogic)
         {
             InitializeComponent();
-
 
             this.formLogic = formLogic;
 
@@ -30,8 +31,7 @@ namespace GPU_Inventory
             searchFilterComboBox.SelectedIndex = 0;
         }
 
-        string[] textBoxesText = new string[7];
-        TextBox[] textBoxes = new TextBox[7];
+        
         private void addButton_Click(object sender, EventArgs e)
         {
             updateTextBoxTextList();
@@ -75,13 +75,13 @@ namespace GPU_Inventory
         }
 
         // update data grid view with current contents of the GPU list
-        public void updateInventoryView()
+        private void updateInventoryView()
         {
             inventoryView = formLogic.updateInventoryView(inventoryView);
         }
 
         // Reset textboxes 
-        public void clearForm()
+        private void clearForm()
         {
             for(int i = 0; i < textBoxesText.Length; i++)
             {
