@@ -11,33 +11,18 @@ namespace GPU_Inventory
 {
     public partial class HomeForm : Form
     {
-        private string manufactererTest;
-        private string nameTest;
-        private string currentSearchFilter = "All";
-        private string currentSearch = "";
-        private double priceTest;
-        private int coresTest;
-        private int clockSpeedTest;
-        private int memorySizeTest;
-        private int quantityTest;
         private int count = 0;
         private int selectedIndex = 0;
-        private bool isSearching = false;
-        private string[] row = new string[7];
-        private List<int> searchResults = new List<int>();
-
-        private List<string> gpuAsList;
-        private InventoryManager manager;
         private FormLogic formLogic;
 
-        public HomeForm(InventoryManager manager, List<string> gpuAsList, FormLogic formLogic)
+        public HomeForm(FormLogic formLogic)
         {
             InitializeComponent();
 
-            this.manager = manager;
-            this.gpuAsList = gpuAsList;
+
             this.formLogic = formLogic;
 
+            initializeTextBoxArray();
             // update the data shown on the screen
             updateInventoryView();
 
@@ -45,103 +30,66 @@ namespace GPU_Inventory
             searchFilterComboBox.SelectedIndex = 0;
         }
 
+        string[] textBoxesText = new string[7];
+        TextBox[] textBoxes = new TextBox[7];
         private void addButton_Click(object sender, EventArgs e)
         {
-            if (validateTextBoxText())
+            updateTextBoxTextList();
+
+            if (formLogic.validateTextBoxText(textBoxesText))
             {
-                GPU temp = new GPU();
-                textBoxesToItem(temp);
-                manager.gpuInventory.Add(temp);
+                
+                formLogic.addGPU();
                 updateInventoryView();
-                // clear textboxes for next use
-                clearForm();
+                return;
             }
+
+            MessageBox.Show("Please check your inputs. Either you did not complete all fields or Price, Cores, Clock Speed, " +
+                    "Memory Size, or Quantity was not entered as a number.  Please make corrections and try again.");
         }
 
-        public string[] compileRow(GPU gpu)
+        private void initializeTextBoxArray()
         {
             count = 0;
+            textBoxes.SetValue(manufactererTextBox, count);
+            count++;
+            textBoxes.SetValue(nameTextBox, count);
+            count++;
+            textBoxes.SetValue(priceTextBox, count);
+            count++;
+            textBoxes.SetValue(coresTextBox, count);
+            count++;
+            textBoxes.SetValue(clockSpeedTextBox, count);
+            count++;
+            textBoxes.SetValue(memorySizeTextBox, count);
+            count++;
+            textBoxes.SetValue(inventoryTextBox, count);
+        }
 
-            row.SetValue(gpu.getManufacterer(), count);
-            count++;
-            row.SetValue(gpu.getName(), count);
-            count++;
-            row.SetValue(gpu.getPrice().ToString(), count);
-            count++;
-            row.SetValue(gpu.getCores().ToString(), count);
-            count++;
-            row.SetValue(gpu.getClockSpeed().ToString(), count);
-            count++;
-            row.SetValue(gpu.getMemorySize().ToString(), count);
-            count++;
-            row.SetValue(gpu.getQuantity().ToString(), count);
-
-            return row;
+        private void updateTextBoxes()
+        {
+            for(int i = 0; i < textBoxes.Length; i++)
+            {
+                textBoxes[i].Text = textBoxesText[i];
+            }
         }
 
         // update data grid view with current contents of the GPU list
         public void updateInventoryView()
         {
-            // clear rows for redraw
-            inventoryView.Rows.Clear();
-
-            compileInventoryViewRows();
-
-            // if user is searching for something
-            if (isSearching == true)
-            {
-                searchResults = manager.displayInventory();
-                // hide all rows in the dataGridView
-                hideAllRows();
-
-                // show only rows that match users search
-                unhideResults();
-            }
-
-            // set searching state to false so all data can be displayed without omission 
-            isSearching = false;
-        }
-
-        private void compileInventoryViewRows()
-        {
-            // Get column values for the new row and add them to the dataGridView.
-            foreach (GPU gpu in manager.gpuInventory)
-            {
-                compileRow(gpu);
-
-                inventoryView.Rows.Add(row);
-            }
-        }
-
-        private void hideAllRows()
-        {
-            foreach (DataGridViewRow row in inventoryView.Rows)
-            {
-                // hide all rows so only matching search results can be displayed
-                row.Visible = false;
-            }
-        }
-
-        public void unhideResults()
-        {
-            // for each item that was returned by the search function
-            foreach (int index in searchResults)
-            {
-                // make visible to the user in the dataGridView
-                inventoryView.Rows[index].Visible = true;
-            }
+            inventoryView = formLogic.updateInventoryView(inventoryView);
         }
 
         // Reset textboxes 
         public void clearForm()
         {
-            manufactererTextBox.Text = "";
-            nameTextBox.Text = "";
-            priceTextBox.Text = "";
-            coresTextBox.Text = "";
-            clockSpeedTextBox.Text = "";
-            memorySizeTextBox.Text = "";
-            inventoryTextBox.Text = "";
+            for(int i = 0; i < textBoxesText.Length; i++)
+            {
+                textBoxesText[i] = "";
+                textBoxes[i].Text = "";
+            }
+
+            //updateInventoryView();
             
         }
 
@@ -155,11 +103,11 @@ namespace GPU_Inventory
         {
             
             // if the inventory is not empty
-            if(manager.gpuInventory.Count > 0)
+            if(formLogic.manager.gpuInventory.Count > 0)
             {
                 selectedIndex = inventoryView.CurrentCell.RowIndex;
                 // remove cooresponding item from inventory manager array
-                manager.delete(selectedIndex);
+                formLogic.manager.delete(selectedIndex);
                 updateInventoryView();
             }
         }
@@ -167,19 +115,18 @@ namespace GPU_Inventory
         // Update a gpu that already exist in the inventory based on user input
         private void updateSelected_Click(object sender, EventArgs e)
         {
-            if (validateTextBoxText())
+            updateTextBoxTextList();
+
+            if (formLogic.validateTextBoxText(textBoxesText))
             {
                 selectedIndex = inventoryView.CurrentCell.RowIndex;
 
-                GPU temp = new GPU();
-                textBoxesToItem(temp);
-                manager.delete(selectedIndex);
-                manager.add(temp);
+                formLogic.addGPU();
+                formLogic.manager.delete(selectedIndex);
 
                 updateInventoryView();
                 clearForm();
             }
-            
         }
 
         private void updateForm()
@@ -193,22 +140,22 @@ namespace GPU_Inventory
         private void search_Click(object sender, EventArgs e)
         {
             // change searching state to true
-            isSearching = true;
+            formLogic.setIsSearchingTrue();
             // clear search results for later use
-            searchResults.Clear();
+            formLogic.searchResults.Clear();
             // set current search string to user provided search textbox tex
-            currentSearch = searchTextBox.Text;
+            formLogic.currentSearch = searchTextBox.Text;
             // set current seach filter string to the string of the item index of the combobox
-            currentSearchFilter = searchFilterComboBox.SelectedItem.ToString();
+            formLogic.currentSearchFilter = searchFilterComboBox.SelectedItem.ToString();
 
-            manager.search(currentSearch, currentSearchFilter);
+            formLogic.manager.search(formLogic.currentSearch, formLogic.currentSearchFilter);
 
             updateForm();
         }
 
         private void loadAll_Click(object sender, EventArgs e)
         {
-            isSearching = false;
+            formLogic.setIsSearchingFalse();
 
             // reset the dataGridView to display all the inventory items
             updateInventoryView();
@@ -220,17 +167,18 @@ namespace GPU_Inventory
             int selectedIndex = inventoryView.CurrentCell.RowIndex;
 
             // set quantity value at the current index to the max allowed by Inventory Manager class
-            manager.restockItem(selectedIndex);
+            formLogic.manager.restockItem(selectedIndex);
             updateInventoryView();
         }
 
         private void restockAll_Click(object sender, EventArgs e)
         {
             // set quantity value of all items to  the max allowed by Inventory Manager class
-            manager.restockAllItems();
+            formLogic.manager.restockAllItems();
             updateInventoryView();
         }
 
+        // keep here
         private void itemToTextBoxes(List<string> gpuAsList)
         {
             int index = 0;
@@ -247,46 +195,43 @@ namespace GPU_Inventory
             memorySizeTextBox.Text = gpuAsList[index];
             index++;
             inventoryTextBox.Text = gpuAsList[index];
+
+            updateTextBoxTextList();
             
         }
 
-        public void textBoxesToItem(GPU gpu)
+        // keep
+        private void updateTextBoxTextList()
         {
-            gpu.setManufacterer(manufactererTest);
-            gpu.setName(nameTest);
-            gpu.setPrice(priceTest);
-            gpu.setCores(coresTest);
-            gpu.setClockSpeed(clockSpeedTest);
-            gpu.setMemorySize(memorySizeTest);
-            gpu.setQuantity(quantityTest);  
+            count = 0;
+
+            textBoxesText.SetValue(manufactererTextBox.Text, count);
+            count++;
+            textBoxesText.SetValue(nameTextBox.Text, count);
+            count++;
+            textBoxesText.SetValue(priceTextBox.Text, count);
+            count++;
+            textBoxesText.SetValue(coresTextBox.Text, count);
+            count++;
+            textBoxesText.SetValue(clockSpeedTextBox.Text, count);
+            count++;
+            textBoxesText.SetValue(memorySizeTextBox.Text, count);
+            count++;
+            textBoxesText.SetValue(inventoryTextBox.Text, count);
+
+            updateTextBoxes();
+
         }
 
-        public bool validateTextBoxText()
-        {
-            if (double.TryParse(priceTextBox.Text, out priceTest) & int.TryParse(coresTextBox.Text, out coresTest) &
-                int.TryParse(clockSpeedTextBox.Text, out clockSpeedTest) & int.TryParse(memorySizeTextBox.Text, out memorySizeTest) &
-                int.TryParse(inventoryTextBox.Text, out quantityTest))
-            {
-                manufactererTest = manufactererTextBox.Text;
-                nameTest = nameTextBox.Text;
-
-                return true;
-            }
-            else
-            {
-                MessageBox.Show("Please check your inputs. Either you did not complete all fields or Price, Cores, Clock Speed, " +
-                    "Memory Size, or Quantity was not entered as a number.  Please make corrections and try again.");
-                return false;
-            }
-        }
 
         private void inventoryView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            updateTextBoxTextList();
             selectedIndex = inventoryView.CurrentCell.RowIndex;
-            gpuAsList.Clear();
-            gpuAsList = manager.gpuInventory[selectedIndex].gpuToList();
+            formLogic.gpuAsList.Clear();
+            formLogic.gpuAsList = formLogic.manager.gpuInventory[selectedIndex].gpuToList();
 
-            itemToTextBoxes(gpuAsList);
+            itemToTextBoxes(formLogic.gpuAsList);
         }
 
         private void clearForm_Click(object sender, EventArgs e)
