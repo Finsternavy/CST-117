@@ -69,8 +69,8 @@ namespace GPU_Inventory
         public bool validateInput(string[] textBoxesText)
         {
 
-            if(stringNotEmpty(textBoxesText[INDEX_MANUFACTURER]) & stringNotEmpty(textBoxesText[INDEX_NAME]) & 
-                doubleTryParse(textBoxesText[INDEX_PRICE]) & intTryParseArray(textBoxesText)){
+            if(stringNotEmpty(textBoxesText[INDEX_MANUFACTURER]) && stringNotEmpty(textBoxesText[INDEX_NAME]) && 
+                doubleTryParse(textBoxesText[INDEX_PRICE]) && intTryParseArray(textBoxesText)){
 
                 return true;
             }
