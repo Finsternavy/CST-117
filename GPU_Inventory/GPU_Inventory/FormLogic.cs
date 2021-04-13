@@ -18,16 +18,14 @@ namespace GPU_Inventory
         public List<int> searchResults = new List<int>();
         public string currentSearchFilter = "All";
         public string currentSearch = "";
-        private string manufactererTest;
-        private string nameTest;
-        private double priceTest;
-        private int coresTest;
-        private int clockSpeedTest;
-        private int memorySizeTest;
-        private int quantityTest;
-        private int count = 0;
-        private int selectedIndex = 0;
         private bool isSearching = false;
+        private readonly int INDEX_MANUFACTURER = 0;
+        private readonly int INDEX_NAME = 1;
+        private readonly int INDEX_PRICE = 2;
+        private readonly int INDEX_CORES = 3;
+        private readonly int INDEX_CLOCKSPEED = 4;
+        private readonly int INDEX_MEMORYSIZE = 5;
+        private readonly int INDEX_QUANTITY = 6;
         
 
         public FormLogic(InventoryManager manager, List<string> gpuAsList)
@@ -36,43 +34,106 @@ namespace GPU_Inventory
             this.gpuAsList = gpuAsList;
         }
 
-        public void addGPU()
+        public void addGPU(string[] textboxes)
         {
-            GPU temp = textBoxesToItem();
+            GPU temp = convertTextBoxesTextToItem(textboxes);
             manager.gpuInventory.Add(temp);
         }
 
-        public GPU textBoxesToItem()
+        private GPU convertTextBoxesTextToItem(string[] textBoxes)
         {
-            GPU gpu = new GPU();
+            GPU temp = new GPU();
+            temp.setManufacterer(textBoxes[INDEX_MANUFACTURER]);
+            temp.setName(textBoxes[INDEX_NAME]);
+            temp.setPrice(tryParseDouble(textBoxes[INDEX_PRICE]));
+            temp.setCores(tryParseInt(textBoxes[INDEX_CORES]));
+            temp.setClockSpeed(tryParseInt(textBoxes[INDEX_CLOCKSPEED]));
+            temp.setMemorySize(tryParseInt(textBoxes[INDEX_MEMORYSIZE]));
+            temp.setQuantity(tryParseInt(textBoxes[INDEX_QUANTITY]));
 
-            gpu.setManufacterer(manufactererTest);
-            gpu.setName(nameTest);
-            gpu.setPrice(priceTest);
-            gpu.setCores(coresTest);
-            gpu.setClockSpeed(clockSpeedTest);
-            gpu.setMemorySize(memorySizeTest);
-            gpu.setQuantity(quantityTest);
-
-            return gpu;
+            return temp;
         }
 
-        public bool validateTextBoxText(string[] textBoxesText)
+        private double tryParseDouble(string priceTest)
         {
-            if (!textBoxesText[0].Equals(null) & !"".Equals(textBoxesText[0]) & !textBoxesText[1].Equals(null) & !"".Equals(textBoxesText[1]) &
-                double.TryParse(textBoxesText[2], out priceTest) & int.TryParse(textBoxesText[3], out coresTest) &
-                int.TryParse(textBoxesText[4], out clockSpeedTest) & int.TryParse(textBoxesText[5], out memorySizeTest) &
-                int.TryParse(textBoxesText[6], out quantityTest))
+            double price;
+            if (double.TryParse(priceTest, out price))
             {
-                manufactererTest = textBoxesText[0];
-                nameTest = textBoxesText[1];
+                return price;
+            }
+
+            price = 0.00;
+            return price;
+        }
+
+        public bool validateInput(string[] textBoxesText)
+        {
+
+            if(stringNotEmpty(textBoxesText[INDEX_MANUFACTURER]) & stringNotEmpty(textBoxesText[INDEX_NAME]) & 
+                doubleTryParse(textBoxesText[INDEX_PRICE]) & intTryParseArray(textBoxesText)){
 
                 return true;
             }
-            else
+
+            return false;
+        }
+
+        private bool stringNotEmpty(string testString)
+        {
+            if (!testString.Equals(null) && testString.Length > 1)
             {
-                return false;
+                return true;
             }
+
+            return false;
+        }
+
+        private bool intTryParse(string testString)
+        {
+            int number;
+            bool success = Int32.TryParse(testString, out number);
+
+            return success;
+        }
+
+        private int tryParseInt(string testString)
+        {
+            int number;
+            if(int.TryParse(testString, out number))
+            {
+                return number;
+            }
+
+            number = 0;
+            return number;
+        }
+
+        private bool intTryParseArray(string[] strings)
+        {
+            foreach(string testString in strings)
+            {
+                if (this.isTrue(testString)) return true;
+            }
+
+            return false;
+        }
+
+        private bool isTrue(string testString)
+        {
+            if (intTryParse(testString))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool doubleTryParse(string testString)
+        {
+            double number;
+            bool success = double.TryParse(testString, out number);
+
+            return success;
         }
 
         public DataGridView updateInventoryView(DataGridView inventoryView)
@@ -100,21 +161,13 @@ namespace GPU_Inventory
 
         public string[] compileRow(GPU gpu)
         {
-            count = 0;
-
-            row.SetValue(gpu.getManufacterer(), count);
-            count++;
-            row.SetValue(gpu.getName(), count);
-            count++;
-            row.SetValue(gpu.getPrice().ToString(), count);
-            count++;
-            row.SetValue(gpu.getCores().ToString(), count);
-            count++;
-            row.SetValue(gpu.getClockSpeed().ToString(), count);
-            count++;
-            row.SetValue(gpu.getMemorySize().ToString(), count);
-            count++;
-            row.SetValue(gpu.getQuantity().ToString(), count);
+            row.SetValue(gpu.getManufacterer(), INDEX_MANUFACTURER);
+            row.SetValue(gpu.getName(), INDEX_NAME);
+            row.SetValue(gpu.getPrice().ToString(), INDEX_PRICE);
+            row.SetValue(gpu.getCores().ToString(), INDEX_CORES);
+            row.SetValue(gpu.getClockSpeed().ToString(), INDEX_CLOCKSPEED);
+            row.SetValue(gpu.getMemorySize().ToString(), INDEX_MEMORYSIZE);
+            row.SetValue(gpu.getQuantity().ToString(), INDEX_QUANTITY);
 
             return row;
         }
@@ -147,41 +200,6 @@ namespace GPU_Inventory
                 // make visible to the user in the dataGridView
                 inventoryView.Rows[index].Visible = true;
             }
-        }
-
-        public string getManufactererTest()
-        {
-            return this.manufactererTest;
-        }
-
-        public string getNameTest()
-        {
-            return this.nameTest;
-        }
-
-        public double getPriceTest()
-        {
-            return this.priceTest;
-        }
-
-        public int getCoresTest()
-        {
-            return this.coresTest;
-        }
-
-        public int getClockSpeedTest()
-        {
-            return this.clockSpeedTest;
-        }
-
-        public int getMemorySizeTest()
-        {
-            return this.memorySizeTest;
-        }
-
-        public int getQuantityTest()
-        {
-            return this.quantityTest;
         }
 
         public void setIsSearchingFalse()

@@ -16,6 +16,13 @@ namespace GPU_Inventory
         private FormLogic formLogic;
         private string[] textBoxesText = new string[7];
         private TextBox[] textBoxes = new TextBox[7];
+        private readonly int INDEX_MANUFACTURER = 0;
+        private readonly int INDEX_NAME = 1;
+        private readonly int INDEX_PRICE = 2;
+        private readonly int INDEX_CORES = 3;
+        private readonly int INDEX_CLOCKSPEED = 4;
+        private readonly int INDEX_MEMORYSIZE = 5;
+        private readonly int INDEX_QUANTITY = 6;
 
         public HomeForm(FormLogic formLogic)
         {
@@ -36,34 +43,27 @@ namespace GPU_Inventory
         {
             updateTextBoxTextList();
 
-            if (formLogic.validateTextBoxText(textBoxesText))
+            if (formLogic.validateInput(textBoxesText))
             {
                 
-                formLogic.addGPU();
+                formLogic.addGPU(textBoxesText);
                 updateInventoryView();
                 return;
             }
 
-            MessageBox.Show("Please check your inputs. Either you did not complete all fields or Price, Cores, Clock Speed, " +
-                    "Memory Size, or Quantity was not entered as a number.  Please make corrections and try again.");
+            MessageBox.Show("Please check your inputs. Manufacterer and Name must be at least 2 characters long and Price, Cores" +
+                ", Clock Speed, Memory Size, and Quantity must be a number.  Please make corrections and try again.");
         }
 
         private void initializeTextBoxArray()
         {
-            count = 0;
-            textBoxes.SetValue(manufactererTextBox, count);
-            count++;
-            textBoxes.SetValue(nameTextBox, count);
-            count++;
-            textBoxes.SetValue(priceTextBox, count);
-            count++;
-            textBoxes.SetValue(coresTextBox, count);
-            count++;
-            textBoxes.SetValue(clockSpeedTextBox, count);
-            count++;
-            textBoxes.SetValue(memorySizeTextBox, count);
-            count++;
-            textBoxes.SetValue(inventoryTextBox, count);
+            textBoxes.SetValue(manufactererTextBox, INDEX_MANUFACTURER);
+            textBoxes.SetValue(nameTextBox, INDEX_NAME);
+            textBoxes.SetValue(priceTextBox, INDEX_PRICE);
+            textBoxes.SetValue(coresTextBox, INDEX_CORES);
+            textBoxes.SetValue(clockSpeedTextBox, INDEX_CLOCKSPEED);
+            textBoxes.SetValue(memorySizeTextBox, INDEX_MEMORYSIZE);
+            textBoxes.SetValue(inventoryTextBox, INDEX_QUANTITY);
         }
 
         private void updateTextBoxes()
@@ -117,15 +117,14 @@ namespace GPU_Inventory
         {
             updateTextBoxTextList();
 
-            if (formLogic.validateTextBoxText(textBoxesText))
+            if (formLogic.validateInput(textBoxesText))
             {
                 selectedIndex = inventoryView.CurrentCell.RowIndex;
 
-                formLogic.addGPU();
+                formLogic.addGPU(textBoxesText);
                 formLogic.manager.delete(selectedIndex);
 
-                updateInventoryView();
-                clearForm();
+                updateForm();
             }
         }
 
@@ -181,53 +180,36 @@ namespace GPU_Inventory
         // keep here
         private void itemToTextBoxes(List<string> gpuAsList)
         {
-            int index = 0;
-            manufactererTextBox.Text = gpuAsList[index];
-            index++;
-            nameTextBox.Text = gpuAsList[index];
-            index++;
-            priceTextBox.Text = gpuAsList[index];
-            index++;
-            coresTextBox.Text = gpuAsList[index];
-            index++;
-            clockSpeedTextBox.Text = gpuAsList[index];
-            index++;
-            memorySizeTextBox.Text = gpuAsList[index];
-            index++;
-            inventoryTextBox.Text = gpuAsList[index];
+            manufactererTextBox.Text = gpuAsList[INDEX_MANUFACTURER];
+            nameTextBox.Text = gpuAsList[INDEX_NAME];
+            priceTextBox.Text = gpuAsList[INDEX_PRICE];
+            coresTextBox.Text = gpuAsList[INDEX_CORES];
+            clockSpeedTextBox.Text = gpuAsList[INDEX_CLOCKSPEED];
+            memorySizeTextBox.Text = gpuAsList[INDEX_MEMORYSIZE];
+            inventoryTextBox.Text = gpuAsList[INDEX_QUANTITY];
 
             updateTextBoxTextList();
-            
         }
 
         // keep
         private void updateTextBoxTextList()
         {
-            count = 0;
-
-            textBoxesText.SetValue(manufactererTextBox.Text, count);
-            count++;
-            textBoxesText.SetValue(nameTextBox.Text, count);
-            count++;
-            textBoxesText.SetValue(priceTextBox.Text, count);
-            count++;
-            textBoxesText.SetValue(coresTextBox.Text, count);
-            count++;
-            textBoxesText.SetValue(clockSpeedTextBox.Text, count);
-            count++;
-            textBoxesText.SetValue(memorySizeTextBox.Text, count);
-            count++;
-            textBoxesText.SetValue(inventoryTextBox.Text, count);
+            textBoxesText.SetValue(manufactererTextBox.Text, INDEX_MANUFACTURER);
+            textBoxesText.SetValue(nameTextBox.Text, INDEX_NAME);
+            textBoxesText.SetValue(priceTextBox.Text, INDEX_PRICE);
+            textBoxesText.SetValue(coresTextBox.Text, INDEX_CORES);
+            textBoxesText.SetValue(clockSpeedTextBox.Text, INDEX_CLOCKSPEED);
+            textBoxesText.SetValue(memorySizeTextBox.Text, INDEX_MEMORYSIZE);
+            textBoxesText.SetValue(inventoryTextBox.Text, INDEX_QUANTITY);
 
             updateTextBoxes();
-
         }
 
 
         private void inventoryView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             updateTextBoxTextList();
-            selectedIndex = inventoryView.CurrentCell.RowIndex;
+            int selectedIndex = inventoryView.CurrentCell.RowIndex;
             formLogic.gpuAsList.Clear();
             formLogic.gpuAsList = formLogic.manager.gpuInventory[selectedIndex].gpuToList();
 
@@ -239,6 +221,7 @@ namespace GPU_Inventory
             clearForm();
             searchTextBox.Text = "";
         }
+
     }
 
 }
