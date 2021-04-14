@@ -11,7 +11,7 @@ namespace GPU_Inventory
     {
         public GPU()
         {
-            this.setManufacterer("Default");
+            this.setManufacturer("Default");
             this.setName("Default");
             this.setPrice(0.00);
             this.setCores(0);
@@ -21,9 +21,9 @@ namespace GPU_Inventory
             gpuAsList = new List<string>();
         }
 
-        public GPU(string manufacterer, string name, double price, int cores, int clockSpeed, int memorySize, int quantity )
+        public GPU(string manufacturer, string name, double price, int cores, int clockSpeed, int memorySize, int quantity )
         {
-            this.setManufacterer(manufacterer);
+            this.setManufacturer(manufacturer);
             this.setName(name);
             this.setPrice(price);
             this.cores = cores;
@@ -71,7 +71,7 @@ namespace GPU_Inventory
 
         public List<string> gpuToList()
         {
-            gpuAsList.Add(this.getManufacterer());
+            gpuAsList.Add(this.getManufacturer());
             gpuAsList.Add(this.getName());
             gpuAsList.Add(this.getPrice().ToString());
             gpuAsList.Add(this.getCores().ToString());
@@ -86,7 +86,7 @@ namespace GPU_Inventory
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append(getManufacterer() + "  ");
+            sb.Append(getManufacturer() + "  ");
             sb.Append(getName() + "  ");
             sb.Append(getPrice() + "  ");
             sb.Append(getCores() + "  ");

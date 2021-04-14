@@ -23,6 +23,7 @@ namespace GPU_Inventory
         private readonly int INDEX_CLOCKSPEED = 4;
         private readonly int INDEX_MEMORYSIZE = 5;
         private readonly int INDEX_QUANTITY = 6;
+        private bool controlPanelHidden = true;
 
         public HomeForm(FormLogic formLogic)
         {
@@ -162,19 +163,26 @@ namespace GPU_Inventory
 
         private void restockSelected_Click(object sender, EventArgs e)
         {
-            // Get index of selected row (Corresponds to gpus index also)
-            int selectedIndex = inventoryView.CurrentCell.RowIndex;
+            if(formLogic.manager.gpuInventory.Count > 0)
+            {
+                // Get index of selected row (Corresponds to gpus index also)
+                int selectedIndex = inventoryView.CurrentCell.RowIndex;
 
-            // set quantity value at the current index to the max allowed by Inventory Manager class
-            formLogic.manager.restockItem(selectedIndex);
-            updateInventoryView();
+                // set quantity value at the current index to the max allowed by Inventory Manager class
+                formLogic.manager.restockItem(selectedIndex);
+                updateInventoryView();
+            }
         }
 
         private void restockAll_Click(object sender, EventArgs e)
         {
-            // set quantity value of all items to  the max allowed by Inventory Manager class
-            formLogic.manager.restockAllItems();
-            updateInventoryView();
+            if(formLogic.manager.gpuInventory.Count > 0)
+            {
+                // set quantity value of all items to  the max allowed by Inventory Manager class
+                formLogic.manager.restockAllItems();
+                updateInventoryView();
+            }
+            
         }
 
         // keep here
@@ -222,6 +230,40 @@ namespace GPU_Inventory
             searchTextBox.Text = "";
         }
 
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void toggleControlPanelButton_Click(object sender, EventArgs e)
+        {
+            toggleControlPanel();
+        }
+
+        public void toggleControlPanel()
+        {
+            if(controlPanelHidden == false)
+            {
+                controlPanelHidden = true;
+                transparencyPanel.Show();
+                
+                return;
+            }
+
+            controlPanelHidden = false;
+            transparencyPanel.Hide();
+            
+        }
+
+        private void showLoginScreen()
+        {
+            loginUserControl.Show();
+        }
+
+        private void hideLoginScreen()
+        {
+            loginUserControl.Hide();
+        }
     }
 
 }

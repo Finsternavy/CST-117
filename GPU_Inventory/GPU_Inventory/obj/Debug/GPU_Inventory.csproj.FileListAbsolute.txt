@@ -1,4 +1,3 @@
-C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GPU_Inventory.csprojAssemblyReference.cache
 C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GPU_Inventory.Properties.Resources.resources
 C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GPU_Inventory.csproj.GenerateResource.cache
 C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GPU_Inventory.csproj.CoreCompileInputs.cache
@@ -8,3 +7,4 @@ C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\bin\Debug\GP
 C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GPU_Inventory.exe
 C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GPU_Inventory.pdb
 C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GPU_Inventory.HomeForm.resources
+C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GPU_Inventory.LoginUserControl.resources

@@ -14,27 +14,27 @@ namespace GPU_Inventory
 
         }
 
-        public Item(string manufacterer, string name, double price, int quantity)
+        public Item(string manufacturer, string name, double price, int quantity)
         {
-            this.manufacterer = manufacterer;
+            this.manufacturer = manufacturer;
             this.name = name;
             this.price = price;
             this.quantity = quantity;
         }
 
-        private string manufacterer = "";
+        private string manufacturer = "";
         private string name = "";
         private double price = 0.00;
         private int quantity = 0;
 
-        public string getManufacterer()
+        public string getManufacturer()
         {
-            return this.manufacterer;
+            return this.manufacturer;
         }
 
-        public void setManufacterer(string manufacterer)
+        public void setManufacturer(string manufacterer)
         {
-            this.manufacterer = manufacterer;
+            this.manufacturer = manufacterer;
         }
 
         public string getName()
@@ -99,7 +99,7 @@ namespace GPU_Inventory
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append(getManufacterer() + "  ");
+            sb.Append(getManufacturer() + "  ");
             sb.Append(getName() + "  ");
             sb.Append(getPrice() + "  ");
             sb.Append(getQuantity() + "\r\n");

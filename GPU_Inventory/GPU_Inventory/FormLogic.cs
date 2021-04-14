@@ -43,7 +43,7 @@ namespace GPU_Inventory
         private GPU convertTextBoxesTextToItem(string[] textBoxes)
         {
             GPU temp = new GPU();
-            temp.setManufacterer(textBoxes[INDEX_MANUFACTURER]);
+            temp.setManufacturer(textBoxes[INDEX_MANUFACTURER]);
             temp.setName(textBoxes[INDEX_NAME]);
             temp.setPrice(tryParseDouble(textBoxes[INDEX_PRICE]));
             temp.setCores(tryParseInt(textBoxes[INDEX_CORES]));
@@ -161,7 +161,7 @@ namespace GPU_Inventory
 
         public string[] compileRow(GPU gpu)
         {
-            row.SetValue(gpu.getManufacterer(), INDEX_MANUFACTURER);
+            row.SetValue(gpu.getManufacturer(), INDEX_MANUFACTURER);
             row.SetValue(gpu.getName(), INDEX_NAME);
             row.SetValue(gpu.getPrice().ToString(), INDEX_PRICE);
             row.SetValue(gpu.getCores().ToString(), INDEX_CORES);

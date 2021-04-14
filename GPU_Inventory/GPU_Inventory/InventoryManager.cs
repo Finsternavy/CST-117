@@ -134,7 +134,7 @@ namespace GPU_Inventory
 
         private void manufacterEquals(int index, string manufacterer)
         {
-            if (manufacterer.ToLower().Equals(this.gpuInventory[index].getManufacterer().ToLower()))
+            if (manufacterer.ToLower().Equals(this.gpuInventory[index].getManufacturer().ToLower()))
                 currentSearchIndexes.Add(index);
         }
 
@@ -259,7 +259,7 @@ namespace GPU_Inventory
 
         private void checkThisInstance(int index, string search)
         {
-            if (search.ToLower().Equals(this.gpuInventory[index].getManufacterer().ToLower()) ||
+            if (search.ToLower().Equals(this.gpuInventory[index].getManufacturer().ToLower()) ||
                 search.ToLower().Equals(this.gpuInventory[index].getName().ToLower()) ||
                 search.ToLower().Equals(this.gpuInventory[index].getPrice().ToString()) ||
                 search.ToLower().Equals(this.gpuInventory[index].getCores().ToString()) ||

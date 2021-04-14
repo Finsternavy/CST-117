@@ -12,6 +12,8 @@ namespace GPU_Inventory
         private static List<string> gpuAsList = new List<string>();
         private static InventoryManager manager = new InventoryManager(gpuInventory, gpuAsList);
         private static FormLogic formLogic = new FormLogic(manager, gpuAsList);
+        //private static LoginLogic loginLogic = new LoginLogic(4);
+        //private static Login login = new Login(loginLogic);
 
 
         /// <summary>
