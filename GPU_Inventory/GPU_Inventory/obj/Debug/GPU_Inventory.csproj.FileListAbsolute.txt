@@ -8,3 +8,4 @@ C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GP
 C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GPU_Inventory.pdb
 C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GPU_Inventory.HomeForm.resources
 C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GPU_Inventory.LoginUserControl.resources
+C:\Users\Finst\Documents\GitHub\CST-117\GPU_Inventory\GPU_Inventory\obj\Debug\GPU_Inventory.csprojAssemblyReference.cache

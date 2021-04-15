@@ -10,11 +10,10 @@ namespace GPU_Inventory
     {
         private static List<GPU> gpuInventory = new List<GPU>();
         private static List<string> gpuAsList = new List<string>();
+        // dependency injection of gpuInventory and gpuAsList into Manager class
         private static InventoryManager manager = new InventoryManager(gpuInventory, gpuAsList);
+        // dependency injection of manager and gpuAsList into FormLogic class
         private static FormLogic formLogic = new FormLogic(manager, gpuAsList);
-        //private static LoginLogic loginLogic = new LoginLogic(4);
-        //private static Login login = new Login(loginLogic);
-
 
         /// <summary>
         /// The main entry point for the application.
@@ -24,9 +23,9 @@ namespace GPU_Inventory
 
         static void Main()
         {
-            // add instanciation of inventory manager class to here and pass to form1 (Change form 1 name)
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false); 
+            // dependency injection of formLogic into HomeForm
             Application.Run(new HomeForm(formLogic));
         }
     }
