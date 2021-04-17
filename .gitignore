@@ -4,10 +4,12 @@ folder/
 # Ignore this file
 .setting
 # Ignore ide stuff
-vs/
+.vs/
 # ignore bin
 bin/
+bin/Debug
 # ignore build stuff
+Properties
 out/
 output/
 build/
